@@ -1,2 +1,6 @@
-# dotfiles
- ojisan dotfiles
+dotfiles
+====
+
+おじさんのdotfilesです.
+
+## How To Use
