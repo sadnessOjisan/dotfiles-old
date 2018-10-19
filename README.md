@@ -103,3 +103,21 @@ vimを起動するとプラグインがインストールされる
 ```zsh
 $ vim ~/.vimrc
 ```
+
+### VSCode
+設定ファイルを書く
+
+↓
+
+シンボリックリンクで, `~/Library/Application\ Support/Code/User/` 配下に入れる. 
+
+#### 設定
+`settings.json` を書く
+
+`~/Library/Application\ Support/Code/User/settings.json` を消す
+
+手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
+
+#### キーバーインド
+
+#### プラグイン
