@@ -1,0 +1,16 @@
+# path
+
+alias name='cd name to path'
+
+# command
+alias la='ls -a'
+alias ll='ls -al'
+alias g='git'
+alias gi='git init'
+alias gad='git add .'
+alias gcm='git commit'
+alias gc='git checkout'
+alias gpl='git pull'
+alias gplo='git pull'
+alias gps='git push'
+alias gpso='git push'
