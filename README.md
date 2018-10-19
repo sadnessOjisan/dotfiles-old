@@ -118,6 +118,22 @@ $ vim ~/.vimrc
 
 手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
 
+#### プラグイン
+
+```
+# dump
+$ code --list-extensions > extensions
+
+# install
+$ sh install_extensions.sh
+```
+
 #### キーバーインド
 
-#### プラグイン
+
+#### 参考
+* [Visual Studio Codeで設定ファイル・キーバインディング・拡張機能を共有する](https://qiita.com/mottox2/items/581869563ce5f427b5f6)
+* [type can be used by only '.ts' files](https://qiita.com/akameco/items/3e5402357ca32fd2dcaa)
+
+
+
