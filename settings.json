@@ -1,4 +1,11 @@
 {
-    "flow.useNPMPackagedFlow": true,
-    "javascript.validate.enable": false
+  "flow.useNPMPackagedFlow": true,
+  "javascript.validate.enable": false,
+  "window.zoomLevel": -1,
+  "git.autofetch": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Solarized Light",
+  "editor.formatOnSave": true,
+  "javascript.format.enable": true,
+  "prettier.eslintIntegration": true
 }
