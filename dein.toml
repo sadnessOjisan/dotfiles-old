@@ -42,3 +42,6 @@ repo = 'suy/vim-ctrlp-commandline'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
