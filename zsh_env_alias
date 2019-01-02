@@ -1,0 +1,20 @@
+# path
+alias conf='cd /Users/ojisan/Documents/700_setting/dotfiles'
+alias mat='cd /Users/ojisan/Documents/200_work/270_m19s/271_dev'
+alias eid='cd /Users/ojisan/Documents/200_work/260_Eidea/261_dev'
+alias ser='cd /Users/ojisan/Documents/100_project/140_serenditipy/app'
+alias ade='cd /Users/ojisan/Documents/200_work/290_adelieinc/291_dev'
+alias set='cd /Users/ojisan/Documents/700_setting/dotfiles'
+
+# command
+alias la='ls -a'
+alias ll='ls -al'
+alias g='git'
+alias gi='git init'
+alias gad='git add .'
+alias gcm='git commit'
+alias gc='git checkout'
+alias gpl='git pull'
+alias gplo='git pull origin'
+alias gps='git push'
+alias gpso='git push origin'
