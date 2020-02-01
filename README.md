@@ -69,41 +69,6 @@ vimrcの読み込み
 1. vimを起動
 2. vimの中から`:source .vimrc`
 
-#### Dein
-installは[ここ](https://qiita.com/sugamondo/items/fcaf210ca86d65bcaca8)と[ここ](https://qiita.com/delphinus/items/00ff2c0ba972c6e41542)を参考.
-
-deinのルートディレクトリを作成
-```zsh
-$ cd ~
-
-$ mkdir .vim/dein
-```
-
-deinのルートディレクトリにdeinをインストール
-プラグインの実態はreposにある. 
-```zsh
-$ cd ~/.vim/dein
-
-$ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-
-$ sh installer.sh ./
-
-$ ls
-installer.sh	repos
-```
-
-設定ファイルであるtomlを配置するディレクトリを用意し、dotfilesからtomlを配置する
-```zsh
-$ mkdir ~/.vim/dein/toml
-
-$ mv {dein_lazy.toml,dein.toml} ~/.vim/dein/toml
-```
-
-vimを起動するとプラグインがインストールされる
-```zsh
-$ vim ~/.vimrc
-```
-
 ### VSCode
 設定ファイルを書く
 
