@@ -69,6 +69,41 @@ vimrcの読み込み
 1. vimを起動
 2. vimの中から`:source .vimrc`
 
+#### vim plugin
+
+vundleを利用
+
+##### plugin 格納
+
+mkdir -p ~/.vim/bundle
+
+##### vundle pluginをDL & 配置
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+##### vimの設定ファイルに次を追加
+
+```
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" !! write plugins here !!
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+```
+
+##### vimの反映
+
+vim +PluginInstall +qall
+
 ### VSCode
 設定ファイルを書く
 
