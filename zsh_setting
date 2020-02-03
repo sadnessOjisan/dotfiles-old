@@ -1,37 +1,9 @@
 echo "call zeh_setting"
 
-# tmux
-
-if [[ ! -n $TMUX && $- == *l* ]]; then
-  # get the IDs
-  ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    tmux new-session
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $PERCOL | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session
-  elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID"
-  else
-    :  # Start terminal normally
-  fi
+# tmuxの自動起動
+count=`ps aux | grep tmux | grep -v grep | wc -l`
+if test $count -eq 0; then
+    echo `tmux`
+elif test $count -eq 1; then
+    echo `tmux a`
 fi
-
-# tmuxが起動していない場合にalias設定を行う
-if [ $SHLVL = 1 ]; then
-# tmuxにセッションがなかったら新規セッションを立ち上げた際に分割処理設定を読み込む
-  alias tmux="tmux -2 attach || tmux -2 new-session \; source-file ./tmux_setting"
-fi
-
-# prezto
-# prezto + poworlevel9k
-POWERLEVEL9K_MODE=nerdfont-complete
-[ -f "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"  ] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" \U25B8 "
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""

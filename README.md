@@ -7,26 +7,14 @@ dotfiles
 
 ### zsh
 
-
-preztoをinstall
-
 ```
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+cp .zshrc ~/.zshrc
 ```
 
-以下のコマンドを実行
+### tmux
 
 ```
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-```
-
-```
-cp .zpreztorc ~/.zpreztorc
-
-
+cp .tmux.conf ~/.tmux.conf
 ```
 
 ### vim
