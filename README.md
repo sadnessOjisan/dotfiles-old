@@ -5,35 +5,42 @@ dotfiles
 
 ## How To Use
 
-zsh + tmux
+### zsh
+
+
+preztoをinstall
+
 ```
-mv .zshrc ~/.zshrc
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
-vim
+以下のコマンドを実行
+
+```
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+```
+cp .zpreztorc ~/.zpreztorc
+
+
+```
+
+### vim
+
+vimを最新にする
+```
+brew install vim --with-override-system-vi
+```
+
 ```
 mv .vimrc ~/.vimrc
 ```
 
 ## setting log
-### zsh
-zshrcの読込先を指定
-```
-function loadlib() {
-        lib=${1:?"You have to specify a library file"}
-        if [ -f "$lib" ];then #ファイルの存在を確認
-                . "$lib"
-        fi
-}
-
-loadlib /path/to/zsh_setting
-loadlib /path/to/zsh_env
-```
-
-もしくは
-```
-mv ./.zshrc ~/
-```
 
 #### prezto
 詳しくはこちら

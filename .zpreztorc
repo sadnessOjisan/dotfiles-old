@@ -24,3 +24,10 @@ zstyle ':prezto:module:prompt' theme 'powerline'
    'builtin' 'bg=blue' \
    'command' 'bg=blue' \
    'function' 'bg=blue'
+
+# powerlevel9kをテーマに設定
+zstyle ':prezto:module:prompt' theme 'powerlevel9k'
+
+# 下記2行コメントアウトを外す
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
