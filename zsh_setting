@@ -1,6 +1,6 @@
 echo "call zeh_setting"
 
-# tmuxの自動起動
+# ------------ tmuxの自動起動 ------------
 count=`ps aux | grep tmux | grep -v grep | wc -l`
 if test $count -eq 0; then
     echo `tmuxg`
@@ -8,7 +8,7 @@ elif test $count -eq 1; then
     echo `tmuxg a`
 fi
 
-# git保管
+# ------------ git保管 ------------
 # vcs_infoを読み込み
 autoload -Uz vcs_info
  
@@ -32,3 +32,6 @@ setopt prompt_subst
 ## vcs_info_msg_0_: バージョン管理システムの情報
 ## RPROMPT: 右プロンプトに情報を表示するときの環境変数
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+------------ 保管 ------------
+autoload -U compinit && compinit
