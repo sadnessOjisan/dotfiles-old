@@ -4,6 +4,18 @@ dotfiles
 おじさんのdotfilesです.
 
 ## How To Use
+
+zsh + tmux
+```
+mv .zshrc ~/.zshrc
+```
+
+vim
+```
+mv .vimrc ~/.vimrc
+```
+
+## setting log
 ### zsh
 zshrcの読込先を指定
 ```
