@@ -33,29 +33,6 @@ mv .vimrc ~/.vimrc
 
 ## setting log
 
-#### prezto
-詳しくはこちら
-https://github.com/sorin-ionescu/prezto
-
-プラグイン拡充はこちら
-https://dev.classmethod.jp/tool/zsh-prezto/
-
-```
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```
-
-zshrcに次を追加
-```
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-```
-
-```
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-```
-
 ### vim
 vimを最新にする
 ```
