@@ -8,6 +8,11 @@ elif test $count -eq 1; then
     echo `tmuxg a`
 fi
 
+# ====prompt===
+
+PROMPT='%~
+ $ '
+
 # ------------ git保管 ------------
 # vcs_infoを読み込み
 autoload -Uz vcs_info
@@ -20,7 +25,7 @@ zstyle ':vcs_info:*' formats '(%s)[%b]'
 ## 特別な状態（mergeでコンフリクトしたときなど）でのフォーマット
 ### %a: アクション名（merge, rebaseなど）
 zstyle ':vcs_info:*' actionformats '(%s)[%b|%a]'
- 
+
 # プロンプトが表示される毎にバージョン管理システムの情報を取得
 ## precmd: プロンプトが表示される毎に実行される関数
 ## vcs_info: バージョン管理システムから情報を取得
@@ -31,10 +36,11 @@ precmd () { vcs_info }
 setopt prompt_subst
 ## vcs_info_msg_0_: バージョン管理システムの情報
 ## RPROMPT: 右プロンプトに情報を表示するときの環境変数
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+PROMPT='<%~>'\$vcs_info_msg_0_'
+$ '
 
-# 未commit表示
-RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
+# 見込みっと表示
+RPROMPT="%{${fg[blue]}%}%{${reset_color}%}"
 
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -45,9 +51,5 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
-
 # ------------ 補完 ------------
 autoload -U compinit && compinit
-
-# --- prompt ---
-
