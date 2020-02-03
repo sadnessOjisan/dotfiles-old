@@ -53,3 +53,4 @@ precmd () { vcs_info }
 
 # ------------ 補完 ------------
 autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
