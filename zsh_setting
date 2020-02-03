@@ -39,7 +39,7 @@ setopt prompt_subst
 PROMPT='<%~>'\$vcs_info_msg_0_'
 $ '
 
-# 見込みっと表示
+# 未commit表示
 RPROMPT="%{${fg[blue]}%}%{${reset_color}%}"
 
 autoload -Uz vcs_info
