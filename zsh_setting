@@ -33,5 +33,5 @@ setopt prompt_subst
 ## RPROMPT: 右プロンプトに情報を表示するときの環境変数
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
------------- 保管 ------------
+# ------------ 保管 ------------
 autoload -U compinit && compinit
