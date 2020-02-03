@@ -14,7 +14,10 @@ cp .zshrc ~/.zshrc
 ### tmux
 
 ```
+
 cp .tmux.conf ~/.tmux.conf
+
+cp .tmux.session.conf ~/.tmux.session.conf
 ```
 
 ### vim
