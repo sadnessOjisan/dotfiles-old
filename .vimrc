@@ -104,39 +104,25 @@ if &compatible
   set nocompatible
 endif
 
-" dein.vimインストール時に指定したディレクトリをセット
-let s:dein_dir = expand('~/.vim/dein/repos')
+" /////// package管理 ///////
 
-" dein.vimの実体があるディレクトリをセット
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" dein.vimが存在していない場合はgithubからclone
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+ 
+call vundle#begin()
 
-if dein#load_state(s:dein_dir)
-  echo "load_state"
-  call dein#begin(s:dein_dir)
+Plugin 'VundleVim/Vundle.vim'
 
-  " dein.toml, dein_layz.tomlファイルのディレクトリをセット
-  let s:toml_dir = expand('~/.vim/dein/toml')
+" !! write plugins here !!
+Plugin 'othree/yajs.vim'
+Plugin 'scrooloose/nerdtree'
 
-  " 起動時に読み込むプラグイン群
-  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-
-  " 遅延読み込みしたいプラグイン群
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-syntax enable
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
