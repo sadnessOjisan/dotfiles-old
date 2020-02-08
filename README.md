@@ -19,7 +19,9 @@ brew install vim --with-override-system-vi
 ```
 
 ```
-cp -r ./vim/settings ~/.vim
+mkdir ~/.vim/settings
+
+cp -r ./vim/settings/ ~/.vim/settings
 
 cp ./vim/.vimrc ~/.vimrc
 ```
@@ -28,6 +30,12 @@ cp ./vim/.vimrc ~/.vimrc
 
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+設定を反映
+
+```
+vim +PluginInstall +qall
 ```
 
 ## setting log
