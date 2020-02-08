@@ -6,5 +6,6 @@ function loadlib(){
     fi       
 }
 
-loadlib ~/Documents/dotfiles/zsh_env_alias
+loadlib ~/.zsh/zsh_env
+loadlib ~/.zsh/zsh_alias
 loadlib ~/Documents/dotfiles/zsh_setting
