@@ -14,16 +14,29 @@ mkdir ~/.zsh/settings
 cp -r ./zsh/settings/ ~/.zsh/settings
 ```
 
-設定をコピー
-
-```
-cp ./zsh/.zshrc ~/.zshrc
-```
-
 #### prezto を install
 
 ```
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
+設定ファイルの symlink を作成（必要？）
+
+この時、.zshrc が既に存在する場合 symlink が作成できないので、その場合は下記をファイルトップに追記する事で対応。
+(http://senta.me/blog/2015-09-25/tuning-zsh-uptime-part2/)
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+#### 設定書き換え
+
+設定をコピー
+
+```
+cp ./zsh/.zshrc ~/.zshrc
+
+cp ./zsh/.zshenv ~/.zshenv
 ```
 
 ### vim
@@ -76,6 +89,18 @@ Plugin 'VundleVim/Vundle.vim'
 vim +PluginInstall +qall
 ```
 
+### zsh
+
+#### module
+
+fasd はいれない
+
+git はいれる
+
+archive 入れる
+
+history-substring-module 入れる
+
 ### VSCode
 
 設定ファイルを書く
@@ -99,9 +124,37 @@ vim +PluginInstall +qall
 $ code --list-extensions > extensions
 
 # install
-$ sh install_extensions.sh
+$ sh ./vscode/install_extensions.sh
 ```
 
 #### キーバーインド
 
 TBD
+
+## 解説
+
+起動時の prezto 読み込み
+
+これが zshrc で読まれると prezto が立ち上がる
+
+```
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+```
+
+設定ファイルにシンボリックリンクを貼りまくる。
+
+```
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+.zlogin =>
+.zlogout=>
+.zpreztorc=>
+.zprofile=>
+.zshenv=>
+.zshrc=>
