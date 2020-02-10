@@ -7,3 +7,4 @@ function loadlib(){
 }
 
 loadlib ~/.zsh/zsh_alias
+loadlib ~/.zsh/load_prezto
