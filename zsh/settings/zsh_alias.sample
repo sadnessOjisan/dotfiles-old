@@ -1,7 +1,3 @@
-# path
-
-alias name='cd name to path'
-
 # command
 alias la='ls -a'
 alias ll='ls -al'
@@ -13,4 +9,12 @@ alias gc='git checkout'
 alias gpl='git pull'
 alias gplo='git pull origin'
 alias gps='git push'
-alias gpso='git push'
+alias gpso='git push origin'
+
+# vim -> nvim
+alias vim='nvim'
+
+# path
+alias hoge='cd /path/to/dir'
+alias fuga='cd /path/to/dir'
+alias piyo='cd /path/to/dir'

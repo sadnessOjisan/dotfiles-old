@@ -1,104 +1,138 @@
-dotfiles
-====
+# dotfiles
 
-おじさんのdotfilesです.
+おじさんの dotfiles です.
 
 ## How To Use
 
 ### zsh
 
-```
-cp .zshrc ~/.zshrc
-```
-
-### tmux
+設定置き場を作る
 
 ```
+mkdir ~/.zsh/settings
 
-cp .tmux.conf ~/.tmux.conf
-
-cp .tmux.session.conf ~/.tmux.session.conf
+cp -r ./zsh/settings/ ~/.zsh/
 ```
+
+#### prezto を install
+
+```
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
+設定ファイルの symlink を作成（必要？）
+
+この時、.zshrc が既に存在する場合 symlink が作成できないので、その場合は下記をファイルトップに追記する事で対応。
+(http://senta.me/blog/2015-09-25/tuning-zsh-uptime-part2/)
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+#### 設定書き換え
+
+設定をコピー
+
+```
+cp ./zsh/.zshrc ~/.zshrc
+
+cp ./zsh/.zshenv ~/.zshenv
+```
+
+### neovim
+
+```
+brew install neovim
+```
+
+neovim client をいれる（要 python3）
+
+```
+pip install neovim
+```
+
+設定ファイル
+
+```
+mkdir -p ~/.config/nvim
+
+cp -r ./neovim/settings/ ~/.config/nvim/settings
+
+cp ./neovim/init.vim ~/.config/nvim
+```
+
+プラグイン適用
+
+```
+:PlugInstall
+```
+
+#### coc
 
 ### vim
 
-vimを最新にする
+vim を最新にする
+
 ```
 brew install vim --with-override-system-vi
 ```
 
-```
-mv .vimrc ~/.vimrc
-```
+設定置き場を作る
 
-## setting log
-
-### vim
-vimを最新にする
 ```
-brew install vim --with-override-system-vi
+mkdir ~/.vim/settings
+
+cp -r ./vim/settings/ ~/.vim/settings
 ```
 
-ホームに.vimrcを作成
-```
-$ cd ~/
-$ touch .vimrc
-```
+設定をコピー
 
-.vimrcを編集
 ```
-if filereadable(expand('~/path/to/.vimrc'))
-  source ~/path/to/.vimrc
-endif
+cp ./vim/.vimrc ~/.vimrc
 ```
 
-vimrcの読み込み
-1. vimを起動
-2. vimの中から`:source .vimrc`
+#### vundle を install
 
-#### vim plugin
-
-vundleを利用
-
-##### plugin 格納
-
-mkdir -p ~/.vim/bundle
-
-##### vundle pluginをDL & 配置
-
+```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-##### vimの設定ファイルに次を追加
-
-```
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" !! write plugins here !!
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 ```
 
-##### vimの反映
+設定を反映
 
+```
 vim +PluginInstall +qall
+```
+
+## how to config
+
+### vim
+
+plugin の追加
+
+:PlugInstall
+
+### zsh
+
+#### module
+
+fasd はいれない
+
+git はいれる
+
+archive 入れる
+
+history-substring-module 入れる
 
 ### VSCode
+
 設定ファイルを書く
 
 ↓
 
-シンボリックリンクで, `~/Library/Application\ Support/Code/User/` 配下に入れる. 
+シンボリックリンクで, `~/Library/Application\ Support/Code/User/` 配下に入れる.
 
 #### 設定
+
 `settings.json` を書く
 
 `~/Library/Application\ Support/Code/User/settings.json` を消す
@@ -112,20 +146,37 @@ vim +PluginInstall +qall
 $ code --list-extensions > extensions
 
 # install
-$ sh install_extensions.sh
+$ sh ./vscode/install_extensions.sh
 ```
 
 #### キーバーインド
 
+TBD
 
-#### 参考
-* [Visual Studio Codeで設定ファイル・キーバインディング・拡張機能を共有する](https://qiita.com/mottox2/items/581869563ce5f427b5f6)
-* [type can be used by only '.ts' files](https://qiita.com/akameco/items/3e5402357ca32fd2dcaa)
+## 解説
 
-## tmux
+起動時の prezto 読み込み
 
-自動起動
+これが zshrc で読まれると prezto が立ち上がる
 
-### 画面分割
+```
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+```
 
-ctrl b + %
+設定ファイルにシンボリックリンクを貼りまくる。
+
+```
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+
+.zlogin =>
+.zlogout=>
+.zpreztorc=>
+.zprofile=>
+.zshenv=>
+.zshrc=>
