@@ -11,7 +11,7 @@
 ```
 mkdir ~/.zsh/settings
 
-cp -r ./zsh/settings/ ~/.zsh/settings
+cp -r ./zsh/settings/ ~/.zsh/
 ```
 
 #### prezto を install
@@ -38,6 +38,36 @@ cp ./zsh/.zshrc ~/.zshrc
 
 cp ./zsh/.zshenv ~/.zshenv
 ```
+
+### neovim
+
+```
+brew install neovim
+```
+
+neovim client をいれる（要 python3）
+
+```
+pip install neovim
+```
+
+設定ファイル
+
+```
+mkdir -p ~/.config/nvim
+
+cp -r ./neovim/settings/ ~/.config/nvim/settings
+
+cp ./neovim/init.vim ~/.config/nvim
+```
+
+プラグイン適用
+
+```
+:PlugInstall
+```
+
+#### coc
 
 ### vim
 
@@ -71,30 +101,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ```
 vim +PluginInstall +qall
-```
-
-### neovim
-
-```
-brew install neovim
-```
-
-neovim client をいれる（要 python3）
-
-```
-pip install neovim
-```
-
-```
-mkdir -p ~/.config/nvim
-
-cp -r ./neovim/settings/ ~/.config/nvim/settings
-```
-
-設定をコピー
-
-```
-cp ./neovim/init.vim ~/.config/nvim
 ```
 
 ## how to config

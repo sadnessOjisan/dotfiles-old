@@ -6,5 +6,5 @@ function loadlib(){
     fi       
 }
 
-loadlib ~/.zsh/zsh_alias
-loadlib ~/.zsh/load_prezto
+loadlib ~/.zsh/settings/load_prezto
+loadlib ~/.zsh/settings/zsh_alias
