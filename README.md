@@ -73,21 +73,37 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
 
+### neovim
+
+```
+brew install neovim
+```
+
+neovim client をいれる（要 python3）
+
+```
+pip install neovim
+```
+
+```
+mkdir -p ~/.config/nvim
+
+cp -r ./neovim/settings/ ~/.config/nvim/settings
+```
+
+設定をコピー
+
+```
+cp ./neovim/init.vim ~/.config/nvim
+```
+
 ## how to config
 
 ### vim
 
 plugin の追加
 
-```
-Plugin 'VundleVim/Vundle.vim'
-```
-
-反映
-
-```
-vim +PluginInstall +qall
-```
+:PlugInstall
 
 ### zsh
 
