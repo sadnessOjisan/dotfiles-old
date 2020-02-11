@@ -64,7 +64,7 @@ cp ./neovim/init.vim ~/.config/nvim
 プラグイン適用
 
 ```
-:PlugInstall
+vim +PlugInstall
 ```
 
 #### coc
