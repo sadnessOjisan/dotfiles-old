@@ -4,6 +4,16 @@
 
 ## How To Use
 
+### iterm
+
+terminal は iterm を使う
+
+設定ファイルを import するといい
+
+行った設定は,
+
+- 上にステータスバーを出す
+
 ### zsh
 
 設定置き場を作る
