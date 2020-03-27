@@ -8,3 +8,7 @@ export NODE_PATH=$npm_dir
 
 # Python
 eval "$(pyenv init -)"
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

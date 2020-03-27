@@ -4,6 +4,16 @@
 
 ## How To Use
 
+### iterm
+
+terminal は iterm を使う
+
+設定ファイルを import するといい
+
+行った設定は,
+
+- 上にステータスバーを出す
+
 ### zsh
 
 設定置き場を作る
@@ -64,7 +74,7 @@ cp ./neovim/init.vim ~/.config/nvim
 プラグイン適用
 
 ```
-:PlugInstall
+vim +PlugInstall
 ```
 
 #### coc
@@ -180,3 +190,17 @@ done
 .zprofile=>
 .zshenv=>
 .zshrc=>
+
+#### go の設定
+
+https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
+
+Copy the following to tell vim-go to not map gd as its shortcut for go to definition.
+
+```
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
+```
+
+vim-go の機能をつかう & coc と衝突するところは設定をいじる
