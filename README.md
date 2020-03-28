@@ -135,6 +135,15 @@ history-substring-module 入れる
 
 ### VSCode
 
+#### codeコマンド
+
+1. Command + Shift + Pでコマンドパレット開く。
+2. Shellって検索
+3. インストール
+
+https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
+
+
 設定ファイルを書く
 
 ↓
@@ -148,6 +157,14 @@ history-substring-module 入れる
 `~/Library/Application\ Support/Code/User/settings.json` を消す
 
 手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
+
+```
+ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+```
+
+```
+cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+```
 
 #### プラグイン
 
