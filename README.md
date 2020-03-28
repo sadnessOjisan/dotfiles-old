@@ -49,6 +49,12 @@ cp ./zsh/.zshenv ~/.zshenv
 cp ./zsh/.zpreztorc ~/.zpreztorc
 ```
 
+ここで git commit したら nano に変えられてしまうかもしれないので修正
+
+```
+git config --global core.editor 'vim -c "set fenc=utf-8"'
+```
+
 ### neovim
 
 ```
@@ -58,7 +64,7 @@ brew install neovim
 neovim client をいれる（要 python3）
 
 ```
-pip install neovim
+pip3 install neovim
 ```
 
 設定ファイル
@@ -69,6 +75,13 @@ mkdir -p ~/.config/nvim
 cp -r ./neovim/settings/ ~/.config/nvim/settings
 
 cp ./neovim/init.vim ~/.config/nvim
+```
+
+plugin magener install
+
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 プラグイン適用
