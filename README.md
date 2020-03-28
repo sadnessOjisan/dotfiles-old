@@ -19,7 +19,7 @@ terminal は iterm を使う
 設定置き場を作る
 
 ```
-mkdir ~/.zsh/settings
+mkdir -p ~/.zsh/settings
 
 cp -r ./zsh/settings/ ~/.zsh/
 ```
@@ -30,14 +30,12 @@ cp -r ./zsh/settings/ ~/.zsh/
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
-設定ファイルの symlink を作成（必要？）
-
-この時、.zshrc が既に存在する場合 symlink が作成できないので、その場合は下記をファイルトップに追記する事で対応。
-(http://senta.me/blog/2015-09-25/tuning-zsh-uptime-part2/)
-
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+```
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
 
 #### 設定書き換え
 
@@ -47,6 +45,8 @@ fi
 cp ./zsh/.zshrc ~/.zshrc
 
 cp ./zsh/.zshenv ~/.zshenv
+
+cp ./zsh/.zpreztorc ~/.zpreztorc
 ```
 
 ### neovim
@@ -135,14 +135,13 @@ history-substring-module 入れる
 
 ### VSCode
 
-#### codeコマンド
+#### code コマンド
 
-1. Command + Shift + Pでコマンドパレット開く。
-2. Shellって検索
+1. Command + Shift + P でコマンドパレット開く。
+2. Shell って検索
 3. インストール
 
 https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
-
 
 設定ファイルを書く
 
