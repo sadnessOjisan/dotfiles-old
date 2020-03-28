@@ -1,10 +1,8 @@
 " ctrl+eでnerdtreeを実行
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-
 " tagjump
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-
 
 " 分割windowの移動
 nnoremap sj <C-w>j

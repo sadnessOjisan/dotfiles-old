@@ -126,6 +126,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
 
+#### airline font
+
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+```
+
 ## how to config
 
 ### vim
@@ -233,3 +241,7 @@ let g:go_def_mapping_enabled = 0
 ```
 
 vim-go の機能をつかう & coc と衝突するところは設定をいじる
+
+## trouble shooting
+
+### node がないと neovim coc 動かないかも
