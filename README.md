@@ -92,6 +92,12 @@ vim +PlugInstall
 
 #### coc
 
+JS
+
+```
+:CocInstall coc-tsserver coc-eslint
+```
+
 ### vim
 
 vim を最新にする
@@ -241,6 +247,10 @@ let g:go_def_mapping_enabled = 0
 ```
 
 vim-go の機能をつかう & coc と衝突するところは設定をいじる
+
+### prezto git alias
+
+https://www.shigemk2.com/entry/prezto_git_alias
 
 ## trouble shooting
 

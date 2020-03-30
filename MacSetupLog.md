@@ -24,6 +24,8 @@
 
 ## 開発環境構築
 
+### nvm
+
 ### brew install
 
 [こっち](./readme.md)
