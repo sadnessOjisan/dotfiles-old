@@ -1,0 +1,37 @@
+# Mac のセットアップログ
+
+## PC 自体の設定
+
+### ライブ入力の OFF
+
+### Magicpad のタップでクリックを ON
+
+### マウスのスピード
+
+### キーのリピート
+
+一番早くしておく
+
+## アプリケーションの構築
+
+### Chrome
+
+### Slack
+
+### Notion
+
+### Discord
+
+## 開発環境構築
+
+### nvm
+
+### brew install
+
+### Rust
+
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+## editor 周り
+
+[こっち](./readme.md)

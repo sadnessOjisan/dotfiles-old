@@ -19,7 +19,7 @@ terminal は iterm を使う
 設定置き場を作る
 
 ```
-mkdir ~/.zsh/settings
+mkdir -p ~/.zsh/settings
 
 cp -r ./zsh/settings/ ~/.zsh/
 ```
@@ -30,14 +30,12 @@ cp -r ./zsh/settings/ ~/.zsh/
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
-設定ファイルの symlink を作成（必要？）
-
-この時、.zshrc が既に存在する場合 symlink が作成できないので、その場合は下記をファイルトップに追記する事で対応。
-(http://senta.me/blog/2015-09-25/tuning-zsh-uptime-part2/)
-
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+```
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
 
 #### 設定書き換え
 
@@ -47,6 +45,14 @@ fi
 cp ./zsh/.zshrc ~/.zshrc
 
 cp ./zsh/.zshenv ~/.zshenv
+
+cp ./zsh/.zpreztorc ~/.zpreztorc
+```
+
+ここで git commit したら nano に変えられてしまうかもしれないので修正
+
+```
+git config --global core.editor 'vim -c "set fenc=utf-8"'
 ```
 
 ### neovim
@@ -58,7 +64,7 @@ brew install neovim
 neovim client をいれる（要 python3）
 
 ```
-pip install neovim
+pip3 install neovim
 ```
 
 設定ファイル
@@ -71,6 +77,13 @@ cp -r ./neovim/settings/ ~/.config/nvim/settings
 cp ./neovim/init.vim ~/.config/nvim
 ```
 
+plugin magener install
+
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 プラグイン適用
 
 ```
@@ -78,6 +91,39 @@ vim +PlugInstall
 ```
 
 #### coc
+
+##### JS
+
+```
+:CocInstall coc-tsserver coc-eslint
+```
+
+##### Rust
+
+```
+:CocInstall coc-rls
+```
+
+もしかしたら下のコマンドが必要かも？
+（rust.coc 入れたときに一緒に入るぽいではある）
+
+```
+$ rustup component add rls-preview --toolchain nightly
+$ rustup component add rust-analysis --toolchain nightly
+$ rustup component add rust-src --toolchain nightly
+```
+
+#### dev icons
+
+font が必要なので入れる
+
+```
+brew tap homebrew/cask-fonts
+
+brew cask install font-hack-nerd-font
+```
+
+iterm で font を Hack Nerd Font にする
 
 ### vim
 
@@ -113,6 +159,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
 
+#### airline font
+
+```
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+```
+
 ## how to config
 
 ### vim
@@ -135,6 +189,14 @@ history-substring-module 入れる
 
 ### VSCode
 
+#### code コマンド
+
+1. Command + Shift + P でコマンドパレット開く。
+2. Shell って検索
+3. インストール
+
+https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
+
 設定ファイルを書く
 
 ↓
@@ -148,6 +210,14 @@ history-substring-module 入れる
 `~/Library/Application\ Support/Code/User/settings.json` を消す
 
 手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
+
+```
+ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+```
+
+```
+cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+```
 
 #### プラグイン
 
@@ -204,3 +274,11 @@ let g:go_def_mapping_enabled = 0
 ```
 
 vim-go の機能をつかう & coc と衝突するところは設定をいじる
+
+### prezto git alias
+
+https://www.shigemk2.com/entry/prezto_git_alias
+
+## trouble shooting
+
+### node がないと neovim coc 動かないかも
