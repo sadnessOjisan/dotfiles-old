@@ -92,11 +92,38 @@ vim +PlugInstall
 
 #### coc
 
-JS
+##### JS
 
 ```
 :CocInstall coc-tsserver coc-eslint
 ```
+
+##### Rust
+
+```
+:CocInstall coc-rls
+```
+
+もしかしたら下のコマンドが必要かも？
+（rust.coc 入れたときに一緒に入るぽいではある）
+
+```
+$ rustup component add rls-preview --toolchain nightly
+$ rustup component add rust-analysis --toolchain nightly
+$ rustup component add rust-src --toolchain nightly
+```
+
+#### dev icons
+
+font が必要なので入れる
+
+```
+brew tap homebrew/cask-fonts
+
+brew cask install font-hack-nerd-font
+```
+
+iterm で font を Hack Nerd Font にする
 
 ### vim
 

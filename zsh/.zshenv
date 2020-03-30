@@ -12,3 +12,6 @@ eval "$(pyenv init -)"
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# rust
+source ~/.cargo/env
