@@ -14,6 +14,8 @@ Plug 'vim-airline/vim-airline-themes'
 " tsxのシンタックスハイライト
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+" ReasonMLのハイライト
+Plug 'reasonml-editor/vim-reason-plus'
 " 括弧
 Plug 'jiangmiao/auto-pairs'
 call plug#end()

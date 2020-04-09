@@ -14,6 +14,10 @@ terminal は iterm を使う
 
 - 上にステータスバーを出す
 
+### tmux
+
+cp -r ./tmux/.tmux.conf ~/.tmux.conf
+
 ### zsh
 
 設定置き場を作る
@@ -278,6 +282,16 @@ vim-go の機能をつかう & coc と衝突するところは設定をいじる
 ### prezto git alias
 
 https://www.shigemk2.com/entry/prezto_git_alias
+
+### Vim の操作
+
+#### NerdTree
+
+他の画面に移動する Ctrl+w の後に hjkl
+
+垂直開き s
+
+水平開き i
 
 ## trouble shooting
 
