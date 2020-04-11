@@ -2,6 +2,19 @@
 
 おじさんの dotfiles です.
 
+# Support
+
+## Vim
+
+- Rust
+- JS
+
+### VSCode
+
+- JS
+- Go
+- OCaml
+
 ## How To Use
 
 ### iterm
