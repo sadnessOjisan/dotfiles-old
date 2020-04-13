@@ -17,105 +17,125 @@
 
 ## How To Use
 
-### iterm
+terminal は iterm + tmux を使う.
+iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
-terminal は iterm を使う
+### iterm
 
 設定ファイルを import するといい
 
 行った設定は,
 
 - 上にステータスバーを出す
+- coloring
 
-### tmux
+### [tmux](https://github.com/tmux/tmux)
 
-cp -r ./tmux/.tmux.conf ~/.tmux.conf
+Mac は brew から install できる
+
+```zsh
+% brew install tmux
+```
+
+.tmux.conf が tmux の設定ファイル
+
+```zsh
+% \cp -rf ./tmux/.tmux.conf ~/.tmux.conf
+```
 
 ### zsh
 
 設定置き場を作る
 
-```
-mkdir -p ~/.zsh/settings
+```zsh
+% mkdir -p ~/.zsh/settings
 
-cp -r ./zsh/settings/ ~/.zsh/
+% \cp -rf ./zsh/settings/ ~/.zsh/
 ```
 
 #### prezto を install
 
-```
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```zsh
+% git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
 ```
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+% setopt EXTENDED_GLOB
+% for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  done
 ```
 
 #### 設定書き換え
 
 設定をコピー
 
-```
-cp ./zsh/.zshrc ~/.zshrc
+```zsh
+% cp ./zsh/.zshrc ~/.zshrc
 
-cp ./zsh/.zshenv ~/.zshenv
+% cp ./zsh/.zshenv ~/.zshenv
 
-cp ./zsh/.zpreztorc ~/.zpreztorc
+% cp ./zsh/.zpreztorc ~/.zpreztorc
 ```
 
 ここで git commit したら nano に変えられてしまうかもしれないので修正
 
-```
-git config --global core.editor 'vim -c "set fenc=utf-8"'
+```zsh
+% git config --global core.editor 'vim -c "set fenc=utf-8"'
 ```
 
 ### neovim
 
-```
-brew install neovim
+```zsh
+% brew install neovim
 ```
 
-neovim client をいれる（要 python3）
+neovim client をいれる（要 python3） <= 今は不要かも？
 
-```
-pip3 install neovim
+```zsh
+% pip3 install neovim
 ```
 
 設定ファイル
 
+```zsh
+% mkdir -p ~/.config/nvim
+
+% \cp -rf ./neovim/settings/ ~/.config/nvim/settings
+
+% \cp -f ./neovim/init.vim ~/.config/nvim
 ```
-mkdir -p ~/.config/nvim
 
-cp -r ./neovim/settings/ ~/.config/nvim/settings
+plugin を [vim-plug](https://github.com/junegunn/vim-plug)で管理する
 
-cp ./neovim/init.vim ~/.config/nvim
-```
-
-plugin magener install
-
-```
+```zsh
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-プラグイン適用
+設定ファイルにあるプラグインを vim-plug 経由で Vim に適用する
 
+```zsh
+% vim +PlugInstall
 ```
-vim +PlugInstall
+
+もしくは vim を立ち上げて
+
+```vim
+:PlugInstall
 ```
 
 #### coc
 
-##### JS
+コードの補完は [CoCNeoVim](https://github.com/neoclide/coc.nvim) で行う.
 
-```
+JS 周りのアドオンを install
+
+```vim
 :CocInstall coc-tsserver coc-eslint
 ```
 
-##### Rust
+Rust 周りのアドオンを install
 
 ```
 :CocInstall coc-rls
@@ -124,7 +144,7 @@ vim +PlugInstall
 もしかしたら下のコマンドが必要かも？
 （rust.coc 入れたときに一緒に入るぽいではある）
 
-```
+```zsh
 $ rustup component add rls-preview --toolchain nightly
 $ rustup component add rust-analysis --toolchain nightly
 $ rustup component add rust-src --toolchain nightly
@@ -132,79 +152,69 @@ $ rustup component add rust-src --toolchain nightly
 
 #### dev icons
 
-font が必要なので入れる
+[nerd-fonts](https://github.com/ryanoasis/nerd-fonts)が必要なので入れる. (入れないと文字化けする)
 
-```
-brew tap homebrew/cask-fonts
+FYI: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 
-brew cask install font-hack-nerd-font
+```zsh
+% brew tap homebrew/cask-fonts
+
+% brew cask install font-hack-nerd-font
 ```
 
 iterm で font を Hack Nerd Font にする
+
+#### airline font
+
+<!-- TODO: 本当に必要かは確認する -->
+
+```
+% git clone https://github.com/powerline/fonts.git --depth=1
+% cd fonts
+% ./install.sh
+```
 
 ### vim
 
 vim を最新にする
 
 ```
-brew install vim --with-override-system-vi
-```
-
-設定置き場を作る
-
-```
-mkdir ~/.vim/settings
-
-cp -r ./vim/settings/ ~/.vim/settings
+% brew install vim --with-override-system-vi
 ```
 
 設定をコピー
 
 ```
-cp ./vim/.vimrc ~/.vimrc
+% \cp -f ./vim/.vimrc ~/.vimrc
 ```
 
-#### vundle を install
+## VSCode
 
-```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
+（設定の同期はいったん諦めている）
 
-設定を反映
+`settings.json` を書く.
 
-```
-vim +PluginInstall +qall
-```
+`~/Library/Application\ Support/Code/User/settings.json` に `settings.json`をコピー
 
-#### airline font
+手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
 
-```
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
+```zsh
+% ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
 ```
 
-## how to config
+```zsh
+% \cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+```
 
-### vim
+#### プラグイン
 
-plugin の追加
+```zsh
+# dump
+% code --list-extensions > extensions
 
-:PlugInstall
-
-### zsh
-
-#### module
-
-fasd はいれない
-
-git はいれる
-
-archive 入れる
-
-history-substring-module 入れる
-
-### VSCode
+# install
+% sh ./vscode/install_extensions.sh
+```
 
 #### code コマンド
 
@@ -214,39 +224,7 @@ history-substring-module 入れる
 
 https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
 
-設定ファイルを書く
-
-↓
-
-シンボリックリンクで, `~/Library/Application\ Support/Code/User/` 配下に入れる.
-
-#### 設定
-
-`settings.json` を書く
-
-`~/Library/Application\ Support/Code/User/settings.json` を消す
-
-手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
-
-```
-ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
-```
-
-```
-cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-```
-
-#### プラグイン
-
-```
-# dump
-$ code --list-extensions > extensions
-
-# install
-$ sh ./vscode/install_extensions.sh
-```
-
-#### キーバーインド
+#### 設定ファイルの同期
 
 TBD
 
@@ -256,41 +234,22 @@ TBD
 
 これが zshrc で読まれると prezto が立ち上がる
 
-```
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+```zsh
+% if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 ```
 
 設定ファイルにシンボリックリンクを貼りまくる。
 
-```
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+```zsh
+% setopt EXTENDED_GLOB
+% for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 ```
 
-.zlogin =>
-.zlogout=>
-.zpreztorc=>
-.zprofile=>
-.zshenv=>
-.zshrc=>
-
-#### go の設定
-
-https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
-
-Copy the following to tell vim-go to not map gd as its shortcut for go to definition.
-
-```
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
-```
-
-vim-go の機能をつかう & coc と衝突するところは設定をいじる
+## cheat sheet
 
 ### prezto git alias
 
@@ -305,7 +264,3 @@ https://www.shigemk2.com/entry/prezto_git_alias
 垂直開き s
 
 水平開き i
-
-## trouble shooting
-
-### node がないと neovim coc 動かないかも
