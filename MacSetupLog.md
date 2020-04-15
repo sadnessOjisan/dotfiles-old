@@ -22,6 +22,15 @@
 
 ## 開発環境構築
 
+### Git
+
+```
+git config --global user.name sadness_ojisan
+git config --global user.email sadness.ojisan@gmail.com
+```
+
+を忘れずに.
+
 ### tmux
 
 brew から入れられる
