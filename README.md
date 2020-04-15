@@ -29,13 +29,7 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 - 上にステータスバーを出す
 - coloring
 
-### [tmux](https://github.com/tmux/tmux)
-
-Mac は brew から install できる
-
-```zsh
-% brew install tmux
-```
+### tmux
 
 .tmux.conf が tmux の設定ファイル
 
@@ -59,8 +53,11 @@ Mac は brew から install できる
 % git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
-```
+```zsh
+# zshでglob記法が使えるように設定
 % setopt EXTENDED_GLOB
+
+# zshrcのシンボリックリンクを貼る
 % for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
@@ -125,9 +122,14 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 :PlugInstall
 ```
 
+この時点で CoCNeoVim を入れる準備ができていないので一部はエラーが出る。
+
 #### coc
 
 コードの補完は [CoCNeoVim](https://github.com/neoclide/coc.nvim) で行う.
+
+Q: もしかして事前に Node.js を入れておかないと動かないかもしれない.
+`[coc.nvim] "node" is not executable, checkout https://nodejs.org/en/download/`
 
 JS 周りのアドオンを install
 
@@ -135,52 +137,21 @@ JS 周りのアドオンを install
 :CocInstall coc-tsserver coc-eslint
 ```
 
-Rust 周りのアドオンを install
+Rust 周りのアドオンを install. 途中で rls(rust-language-server)を入れるか聞かれるので入れる.
 
-```
+```vim
 :CocInstall coc-rls
 ```
 
-もしかしたら下のコマンドが必要かも？
-（rust.coc 入れたときに一緒に入るぽいではある）
+#### wakatime
 
-```zsh
-$ rustup component add rls-preview --toolchain nightly
-$ rustup component add rust-analysis --toolchain nightly
-$ rustup component add rust-src --toolchain nightly
-```
+`:WakaTimeApiKey` で APIkey を入力できるようになる.
 
-#### dev icons
-
-[nerd-fonts](https://github.com/ryanoasis/nerd-fonts)が必要なので入れる. (入れないと文字化けする)
-
-FYI: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
-
-```zsh
-% brew tap homebrew/cask-fonts
-
-% brew cask install font-hack-nerd-font
-```
-
-iterm で font を Hack Nerd Font にする
-
-#### airline font
-
-<!-- TODO: 本当に必要かは確認する -->
-
-```
-% git clone https://github.com/powerline/fonts.git --depth=1
-% cd fonts
-% ./install.sh
-```
+FYI: https://github.com/wakatime/vim-wakatime
 
 ### vim
 
-vim を最新にする
-
-```
-% brew install vim --with-override-system-vi
-```
+起動速度の問題から Git のエディタは生の Vim を使う。そのため使いやすくするために少しだけ設定をする。
 
 設定をコピー
 
@@ -249,6 +220,38 @@ ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 ```
 
+### iterm & tmux
+
+#### status bar
+
+iterm のステータスバーは標準設定でつけることができる。
+
+`Preferences > Profiles > Session > Status bar enabled > Configure Status Bar`
+
+FYI: https://qiita.com/delphinus/items/1748937aefeb241bdcee
+
+#### dev icons
+
+[nerd-fonts](https://github.com/ryanoasis/nerd-fonts)が必要なので入れる. (入れないと文字化けする)
+
+FYI: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+
+```zsh
+% brew tap homebrew/cask-fonts
+
+% brew cask install font-hack-nerd-font
+```
+
+iterm で font を Hack Nerd Font にする
+
+**この作業をしないと, NeoVim でのアイコンや、iterm でのアイコン（tmux でのフッター）が文字化けする**
+
+### テーマ
+
+./iterm に lucario などのテーマを入れている. iterm の preference の color からテーマ読み込みでそのファイルを指定すると設定される。
+
+また text のところで font を Hack Nerd Font に指定すると powerline 系のフォントが設定される（事前に font-hack-nerd-font をインストールしておく必要あり）
+
 ## cheat sheet
 
 ### prezto git alias
@@ -264,3 +267,5 @@ https://www.shigemk2.com/entry/prezto_git_alias
 垂直開き s
 
 水平開き i
+
+## memo
