@@ -11,6 +11,8 @@ Plug 'vim-airline/vim-airline-themes'
 " tsxのシンタックスハイライト
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+" wakatime
+Plug 'wakatime/vim-wakatime'
 " 括弧
 Plug 'jiangmiao/auto-pairs'
 call plug#end()

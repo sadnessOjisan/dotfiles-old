@@ -163,6 +163,12 @@ FYI: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 
 iterm で font を Hack Nerd Font にする -->
 
+#### wakatime
+
+`:WakaTimeApiKey` でAPIkeyを入力できるようになる. 
+
+FYI: https://github.com/wakatime/vim-wakatime
+
 ### vim
 
 起動速度の問題からGitのエディタは生のVimを使う。そのため使いやすくするために少しだけ設定をする。
@@ -252,9 +258,5 @@ https://www.shigemk2.com/entry/prezto_git_alias
 
 ## memo
 
-Successfully built neovim pynvim greenlet
-Installing collected packages: msgpack, greenlet, pynvim, neovim
-Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/Library/Python/3.7'
-Consider using the `--user` option or check the permissions.
 
 
