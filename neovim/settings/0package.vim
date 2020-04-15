@@ -1,5 +1,4 @@
 call plug#begin()
-
 " カラーテーマ
 Plug 't1mxg0d/vim-lucario'
 " JSのシンタックス集
