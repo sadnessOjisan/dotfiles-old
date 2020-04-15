@@ -14,15 +14,11 @@
 
 ## アプリケーションの構築
 
-### Chrome
-
-### Slack
-
-### Notion
-
-### Discord
-
-### iterm
+- Chrome
+- Slack
+- Notion
+- Discord
+- [iterm](https://www.iterm2.com/)
 
 ## 開発環境構築
 
