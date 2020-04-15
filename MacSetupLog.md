@@ -32,6 +32,30 @@
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
+### Go
+
+#### gvm
+
+insatall はバイナリで
+
 ## editor 周り
 
 [こっち](./readme.md)
+
+### tig
+
+brew から入れられる
+
+FYI: https://github.com/jonas/tig/blob/master/INSTALL.adoc
+
+### peco
+
+brew から入れられる
+
+FYI: https://github.com/peco/peco
+
+### hub
+
+brew から入れられる
+
+FYI: https://hub.github.com/
