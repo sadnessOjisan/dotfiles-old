@@ -60,8 +60,10 @@ Mac は brew から install できる
 ```
 
 ```zsh
-# zshのオプション設定
+# zshでglob記法が使えるように設定
 % setopt EXTENDED_GLOB
+
+# zshrcのシンボリックリンクを貼る
 % for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
@@ -126,9 +128,14 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 :PlugInstall
 ```
 
+この時点で CoCNeoVimを入れる準備ができていないので一部はエラーが出る。
+
 #### coc
 
 コードの補完は [CoCNeoVim](https://github.com/neoclide/coc.nvim) で行う.
+
+Q: もしかして事前にNode.jsを入れておかないと動かないかもしれない. 
+`[coc.nvim] "node" is not executable, checkout https://nodejs.org/en/download/`
 
 JS 周りのアドオンを install
 
@@ -136,21 +143,12 @@ JS 周りのアドオンを install
 :CocInstall coc-tsserver coc-eslint
 ```
 
-Rust 周りのアドオンを install
+Rust 周りのアドオンを install. 途中でrls(rust-language-server)を入れるか聞かれるので入れる. 
 
-```
+```vim
 :CocInstall coc-rls
 ```
-
-もしかしたら下のコマンドが必要かも？
-（rust.coc 入れたときに一緒に入るぽいではある）
-
-```zsh
-$ rustup component add rls-preview --toolchain nightly
-$ rustup component add rust-analysis --toolchain nightly
-$ rustup component add rust-src --toolchain nightly
-```
-
+<!-- 
 #### dev icons
 
 [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)が必要なので入れる. (入れないと文字化けする)
@@ -163,25 +161,11 @@ FYI: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
 % brew cask install font-hack-nerd-font
 ```
 
-iterm で font を Hack Nerd Font にする
-
-#### airline font
-
-<!-- TODO: 本当に必要かは確認する -->
-
-```
-% git clone https://github.com/powerline/fonts.git --depth=1
-% cd fonts
-% ./install.sh
-```
+iterm で font を Hack Nerd Font にする -->
 
 ### vim
 
-vim を最新にする
-
-```
-% brew install vim --with-override-system-vi
-```
+起動速度の問題からGitのエディタは生のVimを使う。そのため使いやすくするために少しだけ設定をする。
 
 設定をコピー
 
@@ -265,3 +249,12 @@ https://www.shigemk2.com/entry/prezto_git_alias
 垂直開き s
 
 水平開き i
+
+## memo
+
+Successfully built neovim pynvim greenlet
+Installing collected packages: msgpack, greenlet, pynvim, neovim
+Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/Library/Python/3.7'
+Consider using the `--user` option or check the permissions.
+
+
