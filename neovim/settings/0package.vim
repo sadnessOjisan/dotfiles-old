@@ -6,9 +6,7 @@ Plug 't1mxg0d/vim-lucario'
 Plug 'othree/yajs.vim' " TODO: これが必要な理由を調べる
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" vim内のアイコン
-Plug 'ryanoasis/vim-devicons'
-" vimのヘッダ
+" vimのヘッダ(Nerdtreeで開いた時にファイル名を上に出すためだけに入れる)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " tsxのシンタックスハイライト

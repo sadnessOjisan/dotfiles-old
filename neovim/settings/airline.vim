@@ -1,5 +1,3 @@
-nmap <C-p> <Plug>AirlineSelectPrevTab
-nmap <C-n> <Plug>AirlineSelectNextTab
 " vim-airline settings.
 let g:airline_powerline_fonts = 1
 let g:airline_detect_iminsert = 1
@@ -48,9 +46,18 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
+
 " extensions
+
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+
+" NertTREEで移動するから不要(comment out)
+nmap <C-p> <Plug>AirlineSelectPrevTab
+" nmap <C-n> <Plug>AirlineSelectNextTab
+" NertTREEで移動するから不要
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
+
+
 
 
 let g:airline_theme = 'papercolor'
