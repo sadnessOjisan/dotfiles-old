@@ -22,7 +22,15 @@
 
 ### Discord
 
+### iterm
+
 ## 開発環境構築
+
+### tmux
+
+brew から入れられる
+
+FYI: https://github.com/tmux/tmux
 
 ### brew
 
