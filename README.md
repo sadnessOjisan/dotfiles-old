@@ -37,6 +37,8 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 % \cp -rf ./tmux/.tmux.conf ~/.tmux.conf
 ```
 
+この設定を変えた時は tmux を再度読み込む必要がある。再読み込みは prefix 後に`r`で読めるように設定している.
+
 ### zsh
 
 設定置き場を作る
