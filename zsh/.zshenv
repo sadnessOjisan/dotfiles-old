@@ -1,10 +1,12 @@
 
 
 # Node
-[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-nvm use default
-npm_dir=${NVM_PATH}_modules
-export NODE_PATH=$npm_dir
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opam configuration
+test -r /Users/ideyuta/.opam/opam-init/init.zsh && . /Users/ideyuta/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Python
 eval "$(pyenv init -)"
