@@ -268,4 +268,10 @@ https://www.shigemk2.com/entry/prezto_git_alias
 
 水平開き i
 
+#### tmux
+
+ctrl + v で prefix
+
+|で垂直、-で水平分割
+
 ## memo
