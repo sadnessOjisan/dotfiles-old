@@ -12,6 +12,13 @@
 
 一番早くしておく
 
+### タッチバーの予測変換
+
+Touch Bar 付き Mac の場合、OFF にしといた方が良い.
+「Touch Bar に丹生録候補を表示」ってやつ
+
+FYI: https://dragon-taro.com/college/post-466
+
 ## アプリケーションの構築
 
 - Chrome
@@ -19,6 +26,7 @@
 - Notion
 - Discord
 - [iterm](https://www.iterm2.com/)
+- Docker
 
 ## 開発環境構築
 
