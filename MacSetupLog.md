@@ -27,6 +27,7 @@ FYI: https://dragon-taro.com/college/post-466
 - Discord
 - [iterm](https://www.iterm2.com/)
 - Docker
+  - FYI: https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 
 ## 開発環境構築
 
