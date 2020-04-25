@@ -1,5 +1,3 @@
-
-
 # Node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -8,8 +6,8 @@ export NVM_DIR="$HOME/.nvm"
 # opam configuration
 test -r /Users/ideyuta/.opam/opam-init/init.zsh && . /Users/ideyuta/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# Python
-eval "$(pyenv init -)"
+# llvm(clangd)
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # go
 # gvm本体がないと動かない. 本杯は `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)`
