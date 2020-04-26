@@ -46,6 +46,7 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 ```zsh
 % mkdir -p ~/.zsh/settings
 
+# 設定を追加したらこれを実行する(.zshrcに書いた関数が読み取ってくれる.)
 % \cp -rf ./zsh/settings/ ~/.zsh/
 ```
 
