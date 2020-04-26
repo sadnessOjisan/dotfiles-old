@@ -82,6 +82,12 @@ insatall はバイナリで
 
 FYI: https://github.com/tfutils/tfenv
 
+#### AWS CLI
+
+```
+brew install aws-cli
+```
+
 ## editor 周り
 
 [こっち](./readme.md)
