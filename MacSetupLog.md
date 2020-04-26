@@ -62,6 +62,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 ### Rust
 
+rust 自体のバージョン管理は公式でサポートされている `rustupc` が使える.
+
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 FYI: https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/book/getting-started.html
@@ -71,6 +73,14 @@ FYI: https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/book/getting-st
 #### gvm
 
 insatall はバイナリで
+
+### Terrafrom
+
+#### tfenv
+
+`brew install tfenv`
+
+FYI: https://github.com/tfutils/tfenv
 
 ## editor 周り
 

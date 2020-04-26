@@ -281,20 +281,31 @@ iterm で font を Hack Nerd Font にする
 
 https://www.shigemk2.com/entry/prezto_git_alias
 
+```zsh
+alias g='git'
+alias gb='git branch'
+alias gbc='git checkout -b'
+alias gc='git commit --verbose'
+alias gia='git add'
+alias gm='git merge'
+alias gp='git push'
+alias gfm='git pull'
+```
+
 ### Vim の操作
 
 #### NerdTree
 
 他の画面に移動する Ctrl+w の後に hjkl
 
-垂直開き s
+垂直開き => (Ctrl+w) + s
 
-水平開き i
+水平開き => (Ctrl+w) + i
+
+閉じる => (Ctrl+w) + q
 
 #### tmux
 
 ctrl + v で prefix
 
-|で垂直、-で水平分割
-
-## memo
+prefix 後、|で垂直、-で水平分割
