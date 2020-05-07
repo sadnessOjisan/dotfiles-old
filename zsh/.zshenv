@@ -16,3 +16,10 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # rust
 source ~/.cargo/env
+
+# gcloud
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '~/Documents/300_setting/google-cloud-sdk/path.zsh.inc' ]; then . '~/Documents/300_setting/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '~/Documents/300_setting/google-cloud-sdk/completion.zsh.inc' ]; then . '~/Documents/300_setting/google-cloud-sdk/completion.zsh.inc'; fi

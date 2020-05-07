@@ -71,11 +71,11 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 設定をコピー
 
 ```zsh
-% cp ./zsh/.zshrc ~/.zshrc
+% \cp -f ./zsh/.zshrc ~/.zshrc
 
-% cp ./zsh/.zshenv ~/.zshenv
+% \cp -f ./zsh/.zshenv ~/.zshenv
 
-% cp ./zsh/.zpreztorc ~/.zpreztorc
+% \cp -f ./zsh/.zpreztorc ~/.zpreztorc
 ```
 
 ここで git commit したら nano に変えられてしまうかもしれないので修正
