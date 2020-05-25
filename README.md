@@ -4,6 +4,10 @@
 
 # Support
 
+## zsh
+
+## fish
+
 ## Vim
 
 - Rust
@@ -82,6 +86,37 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ```zsh
 % git config --global core.editor 'vim -c "set fenc=utf-8"'
+```
+
+### fish
+
+#### install
+
+```
+# fish install
+brew install fish
+
+# plugin manager install
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+# z
+fisher add z
+
+# bd
+fisher add 0rax/fish-bd
+
+fisher add oh-my-fish/plugin-peco
+
+fish_config
+```
+
+#### setting
+
+```
+% mkdir -p ~/.config/fish
+
+% \cp -rf ./fish/config.fish ~/.config/fish/
+
 ```
 
 ### neovim
