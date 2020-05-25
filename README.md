@@ -46,6 +46,7 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 ```zsh
 % mkdir -p ~/.zsh/settings
 
+# 設定を追加したらこれを実行する(.zshrcに書いた関数が読み取ってくれる.)
 % \cp -rf ./zsh/settings/ ~/.zsh/
 ```
 
@@ -70,11 +71,11 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 設定をコピー
 
 ```zsh
-% cp ./zsh/.zshrc ~/.zshrc
+% \cp -f ./zsh/.zshrc ~/.zshrc
 
-% cp ./zsh/.zshenv ~/.zshenv
+% \cp -f ./zsh/.zshenv ~/.zshenv
 
-% cp ./zsh/.zpreztorc ~/.zpreztorc
+% \cp -f ./zsh/.zpreztorc ~/.zpreztorc
 ```
 
 ここで git commit したら nano に変えられてしまうかもしれないので修正
@@ -143,6 +144,27 @@ Rust 周りのアドオンを install. 途中で rls(rust-language-server)を入
 
 ```vim
 :CocInstall coc-rls
+```
+
+C 周りを install
+
+c の lsp である clangd を入れる。これは llvm に付随してる。
+
+```
+% brew install llvm
+To use the bundled libc++ please add the following LDFLAGS:
+  LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+
+llvm is keg-only, which means it was not symlinked into /usr/local,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have llvm first in your PATH run:
+  echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find llvm you may need to set:
+  export LDFLAGS="-L/usr/local/opt/llvm/lib"
+  export CPPFLAGS="-I/usr/local/opt/llvm/include"
 ```
 
 #### wakatime
@@ -260,20 +282,31 @@ iterm で font を Hack Nerd Font にする
 
 https://www.shigemk2.com/entry/prezto_git_alias
 
+```zsh
+alias g='git'
+alias gb='git branch'
+alias gbc='git checkout -b'
+alias gc='git commit --verbose'
+alias gia='git add'
+alias gm='git merge'
+alias gp='git push'
+alias gfm='git pull'
+```
+
 ### Vim の操作
 
 #### NerdTree
 
 他の画面に移動する Ctrl+w の後に hjkl
 
-垂直開き s
+垂直開き => (Ctrl+w) + s
 
-水平開き i
+水平開き => (Ctrl+w) + i
+
+閉じる => (Ctrl+w) + q
 
 #### tmux
 
 ctrl + v で prefix
 
-|で垂直、-で水平分割
-
-## memo
+prefix 後、|で垂直、-で水平分割
