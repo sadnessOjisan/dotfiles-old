@@ -6,7 +6,7 @@ function loadlib(){
     fi
 }
 
-loadlib ~/.zsh/load_prezto
+loadlib ~/.zshenv
 loadlib ~/.zsh/zsh_alias
 
 # zsh に戻したいときはこれを消すと良い

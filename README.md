@@ -347,3 +347,5 @@ alias gfm='git pull'
 ctrl + v で prefix
 
 prefix 後、|で垂直、-で水平分割
+
+& ウインドウの破棄
