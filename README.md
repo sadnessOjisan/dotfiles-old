@@ -115,9 +115,11 @@ fish_config
 ```
 % mkdir -p ~/.config/fish
 
-% \cp -rf ./fish/config.fish ~/.config/fish/
-
+% \cp -rf ./fish/ ~/.config/fish/conf.d
 ```
+
+設定ファイルの分割
+FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-main-config
 
 ### neovim
 

@@ -8,3 +8,6 @@ function loadlib(){
 
 loadlib ~/.zsh/load_prezto
 loadlib ~/.zsh/zsh_alias
+
+# zsh に戻したいときはこれを消すと良い
+fish
