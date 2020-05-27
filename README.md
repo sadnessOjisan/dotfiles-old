@@ -88,6 +88,20 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 % git config --global core.editor 'vim -c "set fenc=utf-8"'
 ```
 
+### bash
+
+設定をコピー
+
+```zsh
+% mkdir -p ~/.config/bash
+
+% \cp -rf ./bash/ ~/.config/bash/
+
+% \cp -f ./bash/.bashrc ~/.bashrc
+
+% \cp -f ./bash/.bash_profile ~/.bash_profile
+```
+
 ### fish
 
 #### install
@@ -366,3 +380,5 @@ alias gfm='git pull'
 ctrl + v で prefix
 
 prefix 後、|で垂直、-で水平分割
+
+& ウインドウの破棄
