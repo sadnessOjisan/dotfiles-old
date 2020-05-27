@@ -1,0 +1,9 @@
+call plug#begin()
+" JSのシンタックス集
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+" wakatime
+Plug 'wakatime/vim-wakatime'
+" 括弧
+Plug 'jiangmiao/auto-pairs'
+call plug#end()

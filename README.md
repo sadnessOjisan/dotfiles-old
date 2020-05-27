@@ -104,6 +104,18 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### fish
 
+### vim
+
+設定ファイル
+
+```zsh
+% mkdir -p ~/.config/vim
+
+% \cp -rf ./vim/settings/ ~/.config/vim
+
+% \cp -f ./vim/.vimrc ~/.vimrc
+```
+
 #### install
 
 ```
