@@ -1,4 +1,0 @@
-- [ ] Git 連携
-- [ ] command history 検索
-- [ ] alias
-- [ ] ファイル分割
