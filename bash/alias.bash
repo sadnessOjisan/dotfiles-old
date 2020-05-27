@@ -1,3 +1,5 @@
+#!/bin/bash -eu
+
 # .bashrc を読み直す
 alias br="source ~/.bashrc"
 
@@ -17,3 +19,5 @@ alias gfm='git pull'
 
 # GitHubを表示
 alias hb="hub browse"
+
+echo "setuped alias"

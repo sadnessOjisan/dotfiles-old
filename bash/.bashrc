@@ -1,3 +1,5 @@
+#!/bin/bash -eu
+
 bash_conf=~/.config/bash
 
 . $bash_conf/base.bash

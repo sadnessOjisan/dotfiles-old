@@ -10,6 +10,8 @@ impl Philosopher {
     }
 }
 
+
+
 fn main() {
     let p1 = Philosopher::new("Judith Butler");
     let p2 = Philosopher::new("Gilles Deleuze");
