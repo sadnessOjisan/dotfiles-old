@@ -1,3 +1,5 @@
+echo "load keymap.vim"
+
 " ctrl+eでnerdtreeを実行
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
@@ -17,3 +19,7 @@ nnoremap っy yy
 if &compatible
   set nocompatible
 endif
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
