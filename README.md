@@ -88,6 +88,18 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 % git config --global core.editor 'vim -c "set fenc=utf-8"'
 ```
 
+### bash
+
+設定をコピー
+
+```zsh
+% mkdir -p ~/.config/bash
+
+% cp -rf ./bash/ ~/.config/bash/
+
+% \cp -f ./bash/.bashrc ~/.bashrc
+```
+
 ### fish
 
 #### install
