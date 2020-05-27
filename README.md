@@ -121,6 +121,18 @@ fish_config
 設定ファイルの分割
 FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-main-config
 
+### vim
+
+設定ファイル
+
+```zsh
+% mkdir -p ~/.config/vim
+
+% \cp -rf ./vim/settings/ ~/.config/vim/settings
+
+% \cp -f ./vim/.vimrc ~/.vimrc
+```
+
 ### neovim
 
 ```zsh
