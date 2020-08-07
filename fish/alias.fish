@@ -1,9 +1,6 @@
 # vim -> nvim
 alias vim='nvim'
 
-# .zshrcを読み直す
-alias zr="source ~/.zshrc && source ~/.zshenv"
-
 ###
 ### JUMP系
 ###
