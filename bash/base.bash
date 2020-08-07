@@ -1,3 +1,5 @@
+#!/bin/bash -eu
+
 # bash上にbranchを表示させるために必要. OSによって場所は違うので注意
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
@@ -8,3 +10,5 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 # FYI: http://archive.linux.or.jp/JF/JFdocs/Bash-Prompt-HOWTO-5.html
 export PS1="\[\033[33m\]\w\[\033[36m\]\$(__git_ps1)\[\033[00m\]\n> "
+
+echo "setuped base"

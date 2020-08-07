@@ -135,6 +135,25 @@ fish_config
 設定ファイルの分割
 FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-main-config
 
+### vim
+
+vim plug install
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+設定ファイル
+
+```zsh
+% mkdir -p ~/.config/vim
+
+% \cp -rf ./vim/settings/ ~/.config/vim/settings
+
+% \cp -f ./vim/.vimrc ~/.vimrc
+```
+
 ### neovim
 
 ```zsh
