@@ -1,0 +1,88 @@
+NVM
+
+```
+set -x NVM_DIR "$HOME/.nvm"
+\. "$NVM_DIR/nvm.sh"  # This loads nvm
+\. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+でエラーでる
+
+```
+~/.nvm/nvm.sh (line 942): Unexpected ')' found, expecting '}'
+      "${NVM_NODE_PREFIX}")
+                          ^
+from sourcing file ~/.nvm/nvm.sh
+        called on line 185 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+in function '.' with arguments '/Users/ideyuta/.nvm/nvm.sh'
+        called on line 3 of file ~/.config/fish/conf.d/env.fish
+from sourcing file ~/.config/fish/conf.d/env.fish
+        called on line 294 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+from sourcing file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+        called during startup
+source: Error while reading file '/Users/ideyuta/.nvm/nvm.sh'
+~/.nvm/bash_completion (line 35): Unexpected ')' found, expecting '}'
+      alias) __nvm_installed_nodes ;;
+           ^
+from sourcing file ~/.nvm/bash_completion
+        called on line 185 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+in function '.' with arguments '/Users/ideyuta/.nvm/bash_completion'
+        called on line 4 of file ~/.config/fish/conf.d/env.fish
+from sourcing file ~/.config/fish/conf.d/env.fish
+        called on line 294 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+from sourcing file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+        called during startup
+source: Error while reading file '/Users/ideyuta/.nvm/bash_completion'
+source: Error encountered while sourcing file '/Users/ojisan/.gvm/scripts/gvm':
+source: No such file or directory
+~/.nvm/nvm.sh (line 942): Unexpected ')' found, expecting '}'
+      "${NVM_NODE_PREFIX}")
+                          ^
+from sourcing file ~/.nvm/nvm.sh
+        called on line 185 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+in function '.' with arguments '/Users/ideyuta/.nvm/nvm.sh'
+        called on line 7 of file ~/.config/fish/config.fish
+from sourcing file ~/.config/fish/config.fish
+        called during startup
+source: Error while reading file '/Users/ideyuta/.nvm/nvm.sh'
+~/.nvm/bash_completion (line 35): Unexpected ')' found, expecting '}'
+      alias) __nvm_installed_nodes ;;
+           ^
+from sourcing file ~/.nvm/bash_completion
+        called on line 185 of file /usr/local/Cellar/fish/3.1.2/share/fish/config.fish
+in function '.' with arguments '/Users/ideyuta/.nvm/bash_completion'
+        called on line 8 of file ~/.config/fish/config.fish
+from sourcing file ~/.config/fish/config.fish
+        called during startup
+source: Error while reading file '/Users/ideyuta/.nvm/bash_completion'
+Welcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+````
+
+## ocaml
+
+opam initし直す必要ある
+
+```
+➤ opam init
+
+<><> Required setup - please read <><><><><><><><><><><><><><><><><><><><><>  🐫 
+
+  In normal operation, opam only alters files within ~/.opam.
+
+  However, to best integrate with your system, some environment variables
+  should be set. If you allow it to, this initialisation step will update
+  your fish configuration by adding the following line to ~/.config/fish/config.fish:
+
+    source /Users/ideyuta/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+  Otherwise, every time you want to access your opam installation, you will
+  need to run:
+
+    eval $(opam env)
+
+  You can always re-run this setup with 'opam init' later.
+
+Do you want opam to modify ~/.config/fish/config.fish? [N/y/f]
+(default is 'no', use 'f' to choose a different file) 
+```

@@ -1,18 +1,9 @@
 # vim -> nvim
 alias vim='nvim'
 
-# .zshrcを読み直す
-alias zr="source ~/.zshrc && source ~/.zshenv"
-
 ###
 ### JUMP系
 ###
-
-# dotfilesへ飛ぶ
-alias dof="cd /Users/ideyuta/Documents/300_setting/dotfiles"
-
-# tilへ飛ぶ
-alias til="cd /Users/ideyuta/Documents/100_projects/til"
 
 # GitHubを表示
 alias hb="hub browse"

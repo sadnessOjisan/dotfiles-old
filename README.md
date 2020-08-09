@@ -126,9 +126,14 @@ fish_config
 
 #### setting
 
-```
+```sh
+# reset config
+% rm -rf ~/.config/fish
+
+# create config dir
 % mkdir -p ~/.config/fish
 
+# set config dir
 % \cp -rf ./fish/ ~/.config/fish/conf.d
 ```
 
