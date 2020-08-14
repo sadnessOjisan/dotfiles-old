@@ -90,55 +90,11 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### bash
 
-設定をコピー
-
-```zsh
-% mkdir -p ~/.config/bash
-
-% \cp -rf ./bash/ ~/.config/bash/
-
-% \cp -f ./bash/.bashrc ~/.bashrc
-
-% \cp -f ./bash/.bash_profile ~/.bash_profile
-```
+[bash](./bash/README.md)
 
 ### fish
 
-#### install
-
-```
-# fish install
-brew install fish
-
-# plugin manager install
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
-# z
-fisher add z
-
-# bd
-fisher add 0rax/fish-bd
-
-fisher add oh-my-fish/plugin-peco
-
-fish_config
-```
-
-#### setting
-
-```sh
-# reset config
-% rm -rf ~/.config/fish
-
-# create config dir
-% mkdir -p ~/.config/fish
-
-# set config dir
-% \cp -rf ./fish/ ~/.config/fish/conf.d
-```
-
-設定ファイルの分割
-FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-main-config
+[fish](./fish/README.md)
 
 ### vim
 
