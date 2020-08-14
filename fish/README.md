@@ -17,7 +17,7 @@ brew install fish
 % mkdir -p ~/.config/fish
 
 # set config dir
-% \cp -rf ./fish/ ~/.config/fish/conf.d
+% cp -rf ./fish/ ~/.config/fish/conf.d
 ```
 
 設定ファイルの分割
