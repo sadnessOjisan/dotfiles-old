@@ -40,6 +40,12 @@ git config --global user.email sadness.ojisan@gmail.com
 
 を忘れずに.
 
+neovimでcommitする
+
+```
+$ git config --global core.editor nvim
+```
+
 ### tmux
 
 brew から入れられる
