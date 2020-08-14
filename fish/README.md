@@ -36,6 +36,21 @@ FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 ```
 
+~/.config/fish/fishfile にプラグインを書いておけば command で plugin を installできる.
+
+```sh
+# このrepositoryにあるfishfileをcopy
+$ cp -f ./fish/plugin/fishfile ~/.config/fish/fishfile
+
+# fishfileをinstall
+$ fisher
+
+# 確認
+$ fisher ls
+oh-my-fish/plugin-peco
+rafaelrinaldi/pure
+```
+
 ### おすすめプラグイン
 
 ```
