@@ -6,11 +6,14 @@ $ brew install neovim
 
 ## setting
 
+<!-- 
+この設定は不要になりました
+
 neovim client をいれる（要 python3） <= 今は不要かも？
 
 ```zsh
 % pip3 install neovim
-```
+``` -->
 
 設定ファイル
 
@@ -22,7 +25,7 @@ neovim client をいれる（要 python3） <= 今は不要かも？
 % cp -f ./neovim/init.vim ~/.config/nvim
 ```
 
-### plugin 
+## plugin 
 
 plugin を [vim-plug](https://github.com/junegunn/vim-plug)で管理する
 
@@ -45,24 +48,28 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 この時点で CoCNeoVim を入れる準備ができていないので一部はエラーが出る。
 
-#### coc
+### coc
 
 コードの補完は [CoCNeoVim](https://github.com/neoclide/coc.nvim) で行う.
 
-Q: もしかして事前に Node.js を入れておかないと動かないかもしれない.
-`[coc.nvim] "node" is not executable, checkout https://nodejs.org/en/download/`
+事前に Node.js を入れておかないと動かないので入れておこう. (公式にも書かれている)
 
-JS 周りのアドオンを install
+### JSの設定
 
 ```vim
-:CocInstall coc-tsserver coc-eslint
+# 補完の設定
+:CocInstall coc-tsserver
 ```
+
+### Rustの設定
 
 Rust 周りのアドオンを install. 途中で rls(rust-language-server)を入れるか聞かれるので入れる.
 
 ```vim
 :CocInstall coc-rls
 ```
+
+### Cの設定
 
 C 周りを install
 
@@ -90,3 +97,7 @@ For compilers to find llvm you may need to set:
 `:WakaTimeApiKey` で APIkey を入力できるようになる.
 
 FYI: https://github.com/wakatime/vim-wakatime
+
+## 疑問
+
+* LSPのアップデートってどうするんだろう？
