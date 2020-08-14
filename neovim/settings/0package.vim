@@ -1,7 +1,9 @@
+" HACK: 一番最初に読み込む必要があるのでファイル名に0をつけている
+
 call plug#begin()
 " JSのシンタックス集
 " Plug 'othree/yajs.vim' " TODO: これが必要な理由を調べる
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " tsxのシンタックスハイライト
 " Plug 'leafgarland/typescript-vim'
 " Plug 'peitalin/vim-jsx-typescript'
