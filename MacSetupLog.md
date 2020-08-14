@@ -40,6 +40,12 @@ git config --global user.email sadness.ojisan@gmail.com
 
 を忘れずに.
 
+neovimでcommitする
+
+```
+$ git config --global core.editor nvim
+```
+
 ### tmux
 
 brew から入れられる
@@ -54,9 +60,23 @@ FYI: https://github.com/tmux/tmux
 
 FYI: https://brew.sh/index_ja
 
-### nvm
+### NodeJS
+
+nvm or volta
+
+#### nvm
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+#### volta
+
+```sh
+# install Volta
+curl https://get.volta.sh | bash
+
+# install Node
+volta install node
+```
 
 ### brew install
 

@@ -2,15 +2,20 @@
 # test -r /Users/ideyuta/.opam/opam-init/init.zsh && . /Users/ideyuta/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # llvm(clangd)
-set -x PATH "/usr/local/opt/llvm/bin:$PATH"
+# set -x PATH "/usr/local/opt/llvm/bin:$PATH"
+
+# volta
+# volta を install したら .volta に展開される
+set -x VOLTA_HOME $HOME/.volta
+set -x PATH $VOLTA_HOME/bin:$PATH
 
 # go
 # gvm本体がないと動かない. 本杯は `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)`
 # でインストールできる. これを実行するとzshrc本体も書き換わるので注意.
-source "/Users/ojisan/.gvm/scripts/gvm"
+# source "/Users/ojisan/.gvm/scripts/gvm"
 
 # rust
-source ~/.cargo/env
+# source ~/.cargo/env
 
 # GCP系は一旦諦めてる
 

@@ -2,23 +2,6 @@
 
 おじさんの dotfiles です.
 
-# Support
-
-## zsh
-
-## fish
-
-## Vim
-
-- Rust
-- JS
-
-### VSCode
-
-- JS
-- Go
-- OCaml
-
 ## How To Use
 
 terminal は iterm + tmux を使う.
@@ -45,258 +28,27 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### zsh
 
-設定置き場を作る
-
-```zsh
-% mkdir -p ~/.zsh/settings
-
-# 設定を追加したらこれを実行する(.zshrcに書いた関数が読み取ってくれる.)
-% \cp -rf ./zsh/settings/ ~/.zsh/
-```
-
-#### prezto を install
-
-```zsh
-% git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```
-
-```zsh
-# zshでglob記法が使えるように設定
-% setopt EXTENDED_GLOB
-
-# zshrcのシンボリックリンクを貼る
-% for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-```
-
-#### 設定書き換え
-
-設定をコピー
-
-```zsh
-% \cp -f ./zsh/.zshrc ~/.zshrc
-
-% \cp -f ./zsh/.zshenv ~/.zshenv
-
-% \cp -f ./zsh/.zpreztorc ~/.zpreztorc
-```
-
-ここで git commit したら nano に変えられてしまうかもしれないので修正
-
-```zsh
-% git config --global core.editor 'vim -c "set fenc=utf-8"'
-```
+[zsh](./zsh/README.md)
 
 ### bash
 
-設定をコピー
-
-```zsh
-% mkdir -p ~/.config/bash
-
-% \cp -rf ./bash/ ~/.config/bash/
-
-% \cp -f ./bash/.bashrc ~/.bashrc
-
-% \cp -f ./bash/.bash_profile ~/.bash_profile
-```
+[bash](./bash/README.md)
 
 ### fish
 
-#### install
-
-```
-# fish install
-brew install fish
-
-# plugin manager install
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
-# z
-fisher add z
-
-# bd
-fisher add 0rax/fish-bd
-
-fisher add oh-my-fish/plugin-peco
-
-fish_config
-```
-
-#### setting
-
-```sh
-# reset config
-% rm -rf ~/.config/fish
-
-# create config dir
-% mkdir -p ~/.config/fish
-
-# set config dir
-% \cp -rf ./fish/ ~/.config/fish/conf.d
-```
-
-設定ファイルの分割
-FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-main-config
+[fish](./fish/README.md)
 
 ### vim
 
-vim plug install
-
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-設定ファイル
-
-```zsh
-% mkdir -p ~/.config/vim
-
-% \cp -rf ./vim/settings/ ~/.config/vim/settings
-
-% \cp -f ./vim/.vimrc ~/.vimrc
-```
+[vim](./vim/README.md)
 
 ### neovim
 
-```zsh
-% brew install neovim
-```
-
-neovim client をいれる（要 python3） <= 今は不要かも？
-
-```zsh
-% pip3 install neovim
-```
-
-設定ファイル
-
-```zsh
-% mkdir -p ~/.config/nvim
-
-% \cp -rf ./neovim/settings/ ~/.config/nvim/settings
-
-% \cp -f ./neovim/init.vim ~/.config/nvim
-```
-
-plugin を [vim-plug](https://github.com/junegunn/vim-plug)で管理する
-
-```zsh
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-設定ファイルにあるプラグインを vim-plug 経由で Vim に適用する
-
-```zsh
-% vim +PlugInstall
-```
-
-もしくは vim を立ち上げて
-
-```vim
-:PlugInstall
-```
-
-この時点で CoCNeoVim を入れる準備ができていないので一部はエラーが出る。
-
-#### coc
-
-コードの補完は [CoCNeoVim](https://github.com/neoclide/coc.nvim) で行う.
-
-Q: もしかして事前に Node.js を入れておかないと動かないかもしれない.
-`[coc.nvim] "node" is not executable, checkout https://nodejs.org/en/download/`
-
-JS 周りのアドオンを install
-
-```vim
-:CocInstall coc-tsserver coc-eslint
-```
-
-Rust 周りのアドオンを install. 途中で rls(rust-language-server)を入れるか聞かれるので入れる.
-
-```vim
-:CocInstall coc-rls
-```
-
-C 周りを install
-
-c の lsp である clangd を入れる。これは llvm に付随してる。
-
-```
-% brew install llvm
-To use the bundled libc++ please add the following LDFLAGS:
-  LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-
-llvm is keg-only, which means it was not symlinked into /usr/local,
-because macOS already provides this software and installing another version in
-parallel can cause all kinds of trouble.
-
-If you need to have llvm first in your PATH run:
-  echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.zshrc
-
-For compilers to find llvm you may need to set:
-  export LDFLAGS="-L/usr/local/opt/llvm/lib"
-  export CPPFLAGS="-I/usr/local/opt/llvm/include"
-```
-
-#### wakatime
-
-`:WakaTimeApiKey` で APIkey を入力できるようになる.
-
-FYI: https://github.com/wakatime/vim-wakatime
-
-### vim
-
-起動速度の問題から Git のエディタは生の Vim を使う。そのため使いやすくするために少しだけ設定をする。
-
-設定をコピー
-
-```
-% \cp -f ./vim/.vimrc ~/.vimrc
-```
+[neovim](./neovim/README.md)
 
 ## VSCode
 
-（設定の同期はいったん諦めている）
-
-`settings.json` を書く.
-
-`~/Library/Application\ Support/Code/User/settings.json` に `settings.json`をコピー
-
-手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
-
-```zsh
-% ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
-```
-
-```zsh
-% \cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-```
-
-#### プラグイン
-
-```zsh
-# dump
-% code --list-extensions > extensions
-
-# install
-% sh ./vscode/install_extensions.sh
-```
-
-#### code コマンド
-
-1. Command + Shift + P でコマンドパレット開く。
-2. Shell って検索
-3. インストール
-
-https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
-
-#### 設定ファイルの同期
-
-TBD
+[vscode](./vscode/README.md)
 
 ## 解説
 

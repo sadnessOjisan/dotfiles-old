@@ -28,13 +28,3 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
-" color
-colorscheme lucario
-syntax on
-" 256色
-set t_Co=256
-" truecolor
-set termguicolors
-" 背景色
-set background=dark
