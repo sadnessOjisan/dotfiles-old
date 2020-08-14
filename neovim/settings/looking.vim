@@ -29,8 +29,6 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
-" color
-colorscheme lucario
 syntax on
 " 256色
 set t_Co=256
