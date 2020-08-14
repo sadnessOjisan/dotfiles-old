@@ -2,23 +2,6 @@
 
 おじさんの dotfiles です.
 
-# Support
-
-## zsh
-
-## fish
-
-## Vim
-
-- Rust
-- JS
-
-### VSCode
-
-- JS
-- Go
-- OCaml
-
 ## How To Use
 
 terminal は iterm + tmux を使う.
@@ -45,48 +28,7 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### zsh
 
-設定置き場を作る
-
-```zsh
-% mkdir -p ~/.zsh/settings
-
-# 設定を追加したらこれを実行する(.zshrcに書いた関数が読み取ってくれる.)
-% \cp -rf ./zsh/settings/ ~/.zsh/
-```
-
-#### prezto を install
-
-```zsh
-% git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```
-
-```zsh
-# zshでglob記法が使えるように設定
-% setopt EXTENDED_GLOB
-
-# zshrcのシンボリックリンクを貼る
-% for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done
-```
-
-#### 設定書き換え
-
-設定をコピー
-
-```zsh
-% \cp -f ./zsh/.zshrc ~/.zshrc
-
-% \cp -f ./zsh/.zshenv ~/.zshenv
-
-% \cp -f ./zsh/.zpreztorc ~/.zpreztorc
-```
-
-ここで git commit したら nano に変えられてしまうかもしれないので修正
-
-```zsh
-% git config --global core.editor 'vim -c "set fenc=utf-8"'
-```
+[zsh](./zsh/README.md)
 
 ### bash
 
@@ -98,76 +40,15 @@ iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### vim
 
-vim plug install
-
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-設定ファイル
-
-```zsh
-% mkdir -p ~/.config/vim
-
-% \cp -rf ./vim/settings/ ~/.config/vim/settings
-
-% \cp -f ./vim/.vimrc ~/.vimrc
-```
+[vim](./vim/README.md)
 
 ### neovim
 
 [neovim](./neovim/README.md)
 
-### vim
-
-起動速度の問題から Git のエディタは生の Vim を使う。そのため使いやすくするために少しだけ設定をする。
-
-設定をコピー
-
-```
-% \cp -f ./vim/.vimrc ~/.vimrc
-```
-
 ## VSCode
 
-（設定の同期はいったん諦めている）
-
-`settings.json` を書く.
-
-`~/Library/Application\ Support/Code/User/settings.json` に `settings.json`をコピー
-
-手元の `settings.json` で `~/Library/Application\ Support/Code/User/settings.json` にシンボリックリンクを貼る
-
-```zsh
-% ln -s ./vscode/settings.json ~/Library/Application Support/Code/User/settings.json
-```
-
-```zsh
-% \cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-```
-
-#### プラグイン
-
-```zsh
-# dump
-% code --list-extensions > extensions
-
-# install
-% sh ./vscode/install_extensions.sh
-```
-
-#### code コマンド
-
-1. Command + Shift + P でコマンドパレット開く。
-2. Shell って検索
-3. インストール
-
-https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c
-
-#### 設定ファイルの同期
-
-TBD
+[vscode](./vscode/README.md)
 
 ## 解説
 
