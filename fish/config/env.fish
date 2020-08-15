@@ -15,7 +15,7 @@ set -x PATH $VOLTA_HOME/bin:$PATH
 # source "/Users/ojisan/.gvm/scripts/gvm"
 
 # rust
-# source ~/.cargo/env
+source ~/.cargo/env
 
 # GCP系は一旦諦めてる
 
