@@ -1,9 +1,5 @@
-" ctrl+eでnerdtreeを実行
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
 " tagjump
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
-
 
 " 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
 nnoremap あ a

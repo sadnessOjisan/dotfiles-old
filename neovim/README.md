@@ -98,6 +98,14 @@ For compilers to find llvm you may need to set:
 
 FYI: https://github.com/wakatime/vim-wakatime
 
+### 使い方
+
+#### filer
+
+nerdtreeやめる。標準のnetwを使う。
+
+FYI: https://pc.oreda.net/software/filer/netrw
+
 ## 疑問
 
 * LSPのアップデートってどうするんだろう？

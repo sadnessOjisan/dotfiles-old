@@ -1,8 +1,6 @@
 " HACK: 一番最初に読み込む必要があるのでファイル名に0をつけている
 
 call plug#begin()
-" filer
-Plug 'preservim/nerdtree'
 " JSのシンタックス集
 " Plug 'othree/yajs.vim' " TODO: これが必要な理由を調べる
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
