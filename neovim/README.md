@@ -69,6 +69,29 @@ Rust 周りのアドオンを install. 途中で rls(rust-language-server)を入
 :CocInstall coc-rls
 ```
 
+#### 依存
+
+coc-rls は Rust の Language Server [rls](https://github.com/rust-lang/rls)に依存し、これは [rustup](https://rustup.rs/)に依存している(install方法が依存するだけなので自分で必要な資材を持ってこれるならrustupは不要(かも))。
+
+[rustup](https://rustup.rs/) は Rust の標準のインストーラなので、入っているとは思うが入っていないなら先に入れておこう。
+
+```sh
+% curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+**ただしfishを使っていると `.profile` は読まれないので、別途環境変数をセットする必要がある。**
+(実際には `source ~/.cargo/env` を実行するだけで済む)
+
+rustup が入っていると coc.nvim 起動時に `rls rust-analysis rust-src` が installされる
+
+```sh
+# 自動で入るので手動実行は不要だが、これが実行されている. 
+$ rustup component add rls rust-analysis rust-src
+```
+
+これで設定は完了しそうに見えるが、実際には cargo で管理したフォルダを要求される。
+cargo.toml がない prj だと完全は補完はできない(使ってる外部モジュールわからないし当たり前のことだとは思う)
+
 ### Cの設定
 
 C 周りを install
@@ -97,6 +120,14 @@ For compilers to find llvm you may need to set:
 `:WakaTimeApiKey` で APIkey を入力できるようになる.
 
 FYI: https://github.com/wakatime/vim-wakatime
+
+### 使い方
+
+#### filer
+
+nerdtreeやめる。標準のnetwを使う。
+
+FYI: https://pc.oreda.net/software/filer/netrw
 
 ## 疑問
 
