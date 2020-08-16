@@ -7,7 +7,7 @@ source /Users/ojisan/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 # volta
 # volta を install したら .volta に展開される
 set -x VOLTA_HOME $HOME/.volta
-set -x PATH $VOLTA_HOME/bin:$PATH
+set -x PATH $VOLTA_HOME/bin $PATH
 
 # go
 # gvm本体がないと動かない. 本杯は `zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)`

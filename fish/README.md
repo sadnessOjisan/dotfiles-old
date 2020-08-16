@@ -7,6 +7,12 @@ brew install fish
 
 ## setting
 
+reset
+
+```sh
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+```
+
 ### config
 
 ```sh
