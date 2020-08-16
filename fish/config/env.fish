@@ -1,5 +1,5 @@
 # opam configuration
-# test -r /Users/ideyuta/.opam/opam-init/init.zsh && . /Users/ideyuta/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+source /Users/ojisan/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 
 # llvm(clangd)
 # set -x PATH "/usr/local/opt/llvm/bin:$PATH"
