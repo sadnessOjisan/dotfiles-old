@@ -129,6 +129,14 @@ nerdtree やめる。標準の netw を使う。
 
 FYI: https://pc.oreda.net/software/filer/netrw
 
-## 疑問
+## cheatsheat
 
-- LSP のアップデートってどうするんだろう？
+### 画面分割
+
+<c-w>s 縦割り
+
+<c-w>v 横割り
+
+<c-w>w 移動
+
+<c-w>c 閉じる
