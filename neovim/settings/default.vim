@@ -16,3 +16,6 @@ set hidden
 
 " 入力中のコマンドをステータスに表示する
 set showcmd
+
+" 使うターミナルをfishに
+set shell=fish

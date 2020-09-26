@@ -11,4 +11,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'wakatime/vim-wakatime'
 " 括弧
 Plug 'jiangmiao/auto-pairs'
+"fern の依存
+Plug 'antoinemadec/FixCursorHold.nvim'
+" fern ファイラ
+Plug 'lambdalisue/fern.vim'
+" float window
+Plug 'voldikss/vim-floaterm'
 call plug#end()
