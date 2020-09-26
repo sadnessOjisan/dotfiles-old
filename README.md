@@ -5,7 +5,6 @@
 ## How To Use
 
 terminal は iterm + tmux を使う.
-iterm の中から tmux を使う. (iterm は消してもまあ動く)
 
 ### iterm
 

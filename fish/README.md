@@ -7,6 +7,12 @@ brew install fish
 
 ## setting
 
+reset
+
+```sh
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+```
+
 ### config
 
 ```sh
@@ -17,10 +23,13 @@ brew install fish
 % mkdir -p ~/.config/fish
 
 # set config dir
-% cp -rf ./fish/config ~/.config/fish/conf.d
+% cp -rf ./fish/config/ ~/.config/fish/conf.d
 
 # plugin file copy
 % cp -f ./fish/plugin/fishfile ~/.config/fish/fishfile
+
+# fishfileをinstall
+$ fisher
 ```
 
 設定ファイルの分割
@@ -30,7 +39,7 @@ FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-
 
 [fisher](https://github.com/jorgebucaran/fisher)を使う
 
-```
+```sh
 # plugin manager install
 # fishfile & functions/ が生まれる
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
