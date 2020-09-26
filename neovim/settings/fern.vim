@@ -1,6 +1,6 @@
 let g:fern#disable_default_mappings  = 1
 let g:fern#drawer_width              = 40
-nnoremap <C-u> :Fern . -drawer -reveal=% -toggle<CR>
+nnoremap <C-e> :Fern . -drawer -reveal=% -toggle<CR>
 
 function! s:fern_settings() abort
   nmap <silent> <buffer> <expr> <Plug>(fern-expand-or-collapse) fern#smart#leaf("\<Plug>(fern-action-collapse)", "\<Plug>(fern-action-expand)", "\<Plug>(fern-action-collapse)")
