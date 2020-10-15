@@ -140,3 +140,9 @@ FYI: https://pc.oreda.net/software/filer/netrw
 <c-w>w 移動
 
 <c-w>c 閉じる
+
+### fern
+
+ファイルを開くときはエンター
+
+階層を開けるときは t
