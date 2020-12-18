@@ -17,19 +17,19 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 ```sh
 # reset config
-% rm -rf ~/.config/fish
+rm -rf ~/.config/fish
 
 # create config dir
-% mkdir -p ~/.config/fish
+mkdir -p ~/.config/fish
 
 # set config dir
-% cp -rf ./fish/config/ ~/.config/fish/conf.d
+cp -rf ./fish/config/ ~/.config/fish/conf.d
 
 # plugin file copy
-% cp -f ./fish/plugin/fishfile ~/.config/fish/fishfile
+cp -f ./fish/plugin/fishfile ~/.config/fish/fishfile
 
 # fishfileをinstall
-$ fisher
+fisher
 ```
 
 設定ファイルの分割
@@ -45,7 +45,7 @@ FYI: https://stackoverflow.com/questions/48749443/fish-shell-import-config-into-
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 ```
 
-~/.config/fish/fishfile にプラグインを書いておけば command で plugin を installできる.
+~/.config/fish/fishfile にプラグインを書いておけば command で plugin を install できる.
 
 ```sh
 # このrepositoryにあるfishfileをcopy
