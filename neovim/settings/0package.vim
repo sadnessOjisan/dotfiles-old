@@ -17,4 +17,11 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'lambdalisue/fern.vim'
 " float window
 Plug 'voldikss/vim-floaterm'
+" osyare color
+Plug 'cocopon/iceberg.vim'
+
+" fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
+

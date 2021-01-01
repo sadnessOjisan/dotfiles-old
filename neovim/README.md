@@ -146,3 +146,11 @@ FYI: https://pc.oreda.net/software/filer/netrw
 ファイルを開くときはエンター
 
 階層を開けるときは t
+
+### 検索
+
+```
+:vim word */**
+```
+
+で全文検索できる。

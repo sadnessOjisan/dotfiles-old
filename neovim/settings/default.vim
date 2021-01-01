@@ -19,3 +19,6 @@ set showcmd
 
 " 使うターミナルをfishに
 set shell=fish
+
+" yankしたものをクリップボードに
+set clipboard+=unnamed
